@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
 
   $routeProvider
   .when('/home', {
@@ -18,5 +18,11 @@ app.config(function($routeProvider) {
   .otherwise({
     redirectTo: '/home'
   });
+
+  //configure the $location service:
+  if(window.history && window.history.pushState){
+    $locationProvider.html5Mode(true);
+  }
+
 
 });
