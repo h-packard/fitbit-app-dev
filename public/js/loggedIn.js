@@ -14,9 +14,4 @@ app.controller('loggedInCtrl', function($scope, $timeout, dataService)  {
   dataService.profileReq(accessToken);
   dataService.activitiesReq(accessToken);
 
-  // $timeout(function() {
-  //   $scope.fitBitInfo = dataService.sendFitBitObj();
-  //   console.log($scope.fitBitInfo);
-  // }, 500);
-
 });
